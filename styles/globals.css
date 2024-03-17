@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+html,
+body {
+  -webkit-tap-highlight-color: transparent !important;
+  scroll-behavior: smooth !important;
+}
+.prose {
+  max-width: 100% !important;
+}
+
+.prose img {
+  width: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logos::before,
+.logos::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.partner_marquee_wrapper {
+  animation: partnerscrollx 20s linear infinite;
+}
+
+.partner_img_wrapper {
+  height: 60px;
+  position: relative;
+}
+
+.partner_img_wrapper img {
+  transition: all 0.2s ease-in;
+
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  opacity: 0.7;
+}
+
+.partner_img_wrapper:hover img {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  opacity: 1 !important;
+}
+
+@keyframes partnerscrollx {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.swiper-wrapper {
+  min-height: 100%;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+.mobile_nav_overlay li.active > div > p {
+  position: relative;
+}
+
+.mobile_nav_overlay li.active > div > p::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 14px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50px;
+  background-color: white;
+  z-index: 100;
+}
+
+.arrowHead {
+  clip-path: polygon(75% 0%, 85% 50%, 75% 100%, 0% 100%, 0 0);
+}
+
+.hover_underline p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 3px;
+  width: 30%;
+  background-color: #0a2c88;
+
+  transition: width 0.2s linear;
+}
+
+.hover_underline:hover p::before {
+  width: 100%;
+}
+
+.listItemLine::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background-color: #0a2c88;
+  height: 2.5px;
+  margin: auto 0;
+}
+
+.grey-patch-industry {
+  position: relative;
+}
+
+.grey-patch-industry::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #e3e0da;
+  z-index: 0;
+}
+
+@media (min-width: 1024px) {
+  .grey-patch-industry {
+    position: unset;
+  }
+
+  .grey-patch-industry::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    bottom: 0;
+    left: 60%;
+    height: 60%;
+    width: 100%;
+    background-color: #e3e0da;
+    z-index: 0;
+  }
+
+  .listItemLine::before {
+    left: -1.4rem;
+    width: 12px;
+  }
+}

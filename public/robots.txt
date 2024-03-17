@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://collaboratesolutions.com/
+
+# Sitemaps
+Sitemap: https://collaboratesolutions.com/sitemap.xml
